@@ -1,0 +1,16 @@
+package kodlama.io.rentACar.business.requests;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+// Kullanıcıdan veri almak için kullanılır. Sadece name içerir.
+// Kullanıcıdan gelen veriyi tutar (DTO)(Data Transfer Object)
+// DTO'lar sadece veri alışverişi içindir. Veritabanıyla doğrudan ilişkili değildir.
+public class CreateBrandsRequest {
+	private String name;
+
+}

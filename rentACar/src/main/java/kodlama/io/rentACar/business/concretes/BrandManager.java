@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import kodlama.io.rentACar.business.abstracts.BrandService;
 import kodlama.io.rentACar.business.requests.CreateBrandsRequest;
 import kodlama.io.rentACar.business.responses.GetAllBrandsResponse;
@@ -20,7 +21,7 @@ public class BrandManager implements BrandService {
 	public BrandManager(BrandRepository brandRepository) {
 		this.brandRepository = brandRepository;
 	}
-	
+
 	// Veritabanından Brand nesneleri alınır ve GetAllBrandsResponse'a çevrilir
 	@Override
 	public List<GetAllBrandsResponse> getAll() {
@@ -38,16 +39,14 @@ public class BrandManager implements BrandService {
 
 		return allBrandsResponses;
 	}
-	
+
 	// Request'ten gelen marka ismi alınıp veritabanına kaydedilir
 	@Override
 	public void add(CreateBrandsRequest createBrandsRequest) {
-		Brand brand = new Brand();
-
-		brand.setName(createBrandsRequest.getName());
-
-		this.brandRepository.save(brand);
-
+	    // Yeni Brand nesnesi oluşturuluyor ve veritabanına ekleniyor
+	    Brand brand = new Brand();
+	    brand.setName(createBrandsRequest.getName()); // DTO'dan name alanını alıyoruz
+	    brandRepository.save(brand);
 	}
 
 }

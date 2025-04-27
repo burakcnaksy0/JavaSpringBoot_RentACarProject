@@ -1916,3 +1916,82 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.webjars:s
 2025-04-25 15:43:27,851 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-04-25 15:43:27,855 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-04-25 15:43:27,858 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 15:44:09,752 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 15:44:09,756 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 15:44:09,759 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 15:54:18,229 [Worker-63: Launching RentACarApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 15:54:18,238 [Worker-63: Launching RentACarApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 15:54:18,241 [Worker-63: Launching RentACarApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:02:20,115 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:02:20,120 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:02:20,123 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:04:54,044 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:04:54,051 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:04:54,053 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:12:57,528 [Worker-72: Launching RentACarApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:12:57,534 [Worker-72: Launching RentACarApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:12:57,537 [Worker-72: Launching RentACarApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:19:15,691 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:19:15,698 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:19:15,700 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:21:21,037 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:21:21,042 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:21:21,044 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:22:16,728 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-04-25 16:27:46,488 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:27:46,500 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:27:46,504 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:30:17,686 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:30:17,693 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:30:17,696 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:30:36,465 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:30:36,470 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:30:36,473 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:31:15,580 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:31:15,584 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:31:15,586 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:33:12,159 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:33:12,164 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:33:12,167 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:33:25,636 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:33:25,640 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:33:25,642 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:33:35,616 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:33:35,621 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:33:35,625 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:34:06,976 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:34:06,980 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:34:06,983 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:38:36,332 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:38:36,338 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:38:36,342 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 16:39:26,142 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 16:39:26,147 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 16:39:26,149 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 17:11:55,560 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 17:11:55,573 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 17:11:55,576 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 17:12:39,205 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 17:12:39,210 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 17:12:39,212 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 17:13:21,515 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 17:13:21,519 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 17:13:21,521 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 17:14:55,155 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 17:14:55,159 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 17:14:55,161 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 17:16:12,928 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 17:16:12,931 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 17:16:12,935 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 17:17:08,484 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 17:17:08,488 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 17:17:08,490 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 17:17:37,309 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 17:17:37,314 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 17:17:37,316 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 20:19:13,775 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 20:19:13,785 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 20:19:13,787 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
+2025-04-25 20:21:27,707 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-25 20:21:27,736 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-25 20:21:27,739 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\burak\OneDrive\Masaüstü\CampSpring\rentACar\src\test\resources
