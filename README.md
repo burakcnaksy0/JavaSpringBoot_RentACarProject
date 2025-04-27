@@ -60,40 +60,81 @@ Bu mimaride her katman **tek bir işten sorumludur**.
 
 ---
 
-### 📦 Katmanlar ve Görevleri
+📦 Katmanlar ve Görevleri
+1. Entities Layer (Entity Katmanı)
+Veritabanındaki tabloların Java sınıflarındaki karşılıkları burada bulunur.
+Sınıflar @Entity anotasyonu ile işaretlenir.
+Bu katmanda sadece veri yapısı tutulur, iş mantığı (business logic) olmaz
 
-#### 1. Entities Layer (Entity Katmanı)
-- Veritabanındaki tabloların Java karşılıkları burada olur (`@Entity` anotasyonu).
-- Sadece veri yapısını tutar.  
-Örneğin:
-```java
+Örnek:
 @Entity
-public class User { ... }
+public class User {
+    private Long id;
+    private String name;
+    // getter ve setter metodları
+}
 
-#### 2. Data Access Layer (DAL)
-  -Veritabanı işlemleri burada yapılır.
-  -Repository (DAO) sınıfları bulunur.
+2. Data Access Layer (DAL)
+Veritabanı işlemleri bu katmanda gerçekleştirilir.
+Repository veya DAO (Data Access Object) sınıfları burada yer alır.
+Genellikle Spring Data JPA kullanılıyorsa @Repository anotasyonu ile işaretlenir.
 
-### 3. Business Layer (Service Katmanı)
-    -İş kuralları (business logic) burada yer alır.
-    -Genellikle @Service anotasyonu kullanılır.
+Örnek:
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    // Özelleştirilmiş sorgular yazılabilir
+}
 
-### 4. Web API Layer (Controller Katmanı)
-    -HTTP isteklerini karşılar ve cevaplar (@RestController anotasyonu).
+3. Business Layer (Service Katmanı)
+Uygulamanın iş kuralları (business logic) burada bulunur.
+Genellikle @Service anotasyonu kullanılır.
+Veri erişimi ve iş mantığı burada birleştirilir.
 
-4. Abstract ve Concrete Paket Yapısı
-Her katmanda iki alt package bulunur:
+Örnek:
+@Service
+public class UserService {
+    private final UserRepository userRepository;
+    
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
+    public User createUser(User user) {
+        return userRepository.save(user);
+    }
+}
 
-Package	Açıklama
-abstract	Interface veya abstract class'lar bulunur. Sadece sözleşme/şablon içerir.
-concrete	Interface veya abstract class'ların gerçek implementasyonları bulunur.
+4. Web API Layer (Controller Katmanı)
+Kullanıcıdan gelen HTTP isteklerini karşılar ve cevaplar.
+Genellikle @RestController anotasyonu kullanılır.
+Servis katmanıyla iletişim kurar ve sonuçları döner.
+
+Örnek:
+@RestController
+@RequestMapping("/api/users")
+public class UserController {
+    private final UserService userService;
+    
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User createdUser = userService.createUser(user);
+        return ResponseEntity.ok(createdUser);
+    }
+}
+
+🎯 Abstract ve Concrete Paket Yapısı
+Her katmanda iki alt paket bulunur:
+
+Paket	Açıklama
+abstract	-> Interface veya abstract class'lar bulunur. Sadece sözleşme veya şablon tanımlar.
+concrete	-> Interface veya abstract class'ların gerçek implementasyonları bulunur.
 
 🎯 Neden Abstract ve Concrete Ayrımı Yapılır?
-İleride farklı bir implementasyon gerektiğinde sadece concrete kısmı değiştirmek yeterlidir.
-
-Test yazarken kolayca mock sınıflar oluşturabiliriz.
-
-Bağımlılıklar azalır, proje daha esnek hale gelir.
-
-Dependency Injection prensibine uygun çalışır.
+🔄 İleride farklı bir implementasyon gerektiğinde sadece concrete kısmı değiştirmek yeterli olur.
+🧪 Test yazarken kolayca mock sınıflar oluşturulabilir.
+🔗 Bağımlılıklar azalır, proje daha esnek hale gelir.
+💉 Dependency Injection (Bağımlılık Enjeksiyonu) prensibine uygun çalışır.
