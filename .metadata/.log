@@ -497,3 +497,22 @@ java.lang.IllegalStateException: must specify at least one linked position
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-04-27 20:33:39.320
+!MESSAGE An internal error occurred during: "Compute launch button tooltip".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.io.RandomAccessFile.seek(long)" because "this.inputFile" is null
+	at org.eclipse.core.internal.registry.BufferedRandomInputStream.seek(BufferedRandomInputStream.java:138)
+	at org.eclipse.core.internal.registry.TableReader.goToInputFile(TableReader.java:397)
+	at org.eclipse.core.internal.registry.TableReader.loadConfigurationElement(TableReader.java:200)
+	at org.eclipse.core.internal.registry.RegistryObjectManager.load(RegistryObjectManager.java:438)
+	at org.eclipse.core.internal.registry.RegistryObjectManager.basicGetObject(RegistryObjectManager.java:291)
+	at org.eclipse.core.internal.registry.RegistryObjectManager.getObject(RegistryObjectManager.java:283)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.getConfigurationElement(ConfigurationElementHandle.java:29)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.getChildren(ConfigurationElementHandle.java:82)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.getContextualLaunchConfigurationElement(LaunchShortcutExtension.java:162)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.getContextualLaunchEnablementExpression(LaunchShortcutExtension.java:289)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getShortcutsForSelection(LaunchingResourceManager.java:468)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:254)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:147)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
