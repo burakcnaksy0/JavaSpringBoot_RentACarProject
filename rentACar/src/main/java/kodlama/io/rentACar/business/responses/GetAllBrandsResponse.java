@@ -6,13 +6,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-// Kullanıcıya veri dönerken kullanılır. id ve name içerir.
 @Data
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+// Kullanıcıya veri dönerken kullanılır. id ve name içerir.
 public class GetAllBrandsResponse {
 	private int id;
 	private String name;

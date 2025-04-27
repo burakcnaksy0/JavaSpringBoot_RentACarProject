@@ -12,10 +12,9 @@ import kodlama.io.rentACar.business.abstracts.BrandService;
 import kodlama.io.rentACar.business.requests.CreateBrandsRequest;
 import kodlama.io.rentACar.business.responses.GetAllBrandsResponse;
 
-
-// /api/brands adresine gelen HTTP isteklerini karşılar.
 @RestController
 @RequestMapping("/api/brands")
+// /api/brands adresine gelen HTTP isteklerini karşılar.
 public class BrandsController {
 	private BrandService brandService;
 
@@ -29,10 +28,9 @@ public class BrandsController {
     public List<GetAllBrandsResponse> getAll() {
         return brandService.getAll();
     }
-	
 	@PostMapping("/add")
-	public void add(CreateBrandsRequest createBrandRequest) {
-	    this.brandService.add(createBrandRequest);
+	public void add(CreateBrandsRequest brandsRequest) {
+		this.brandService.add(brandsRequest);
 	}
 
 }

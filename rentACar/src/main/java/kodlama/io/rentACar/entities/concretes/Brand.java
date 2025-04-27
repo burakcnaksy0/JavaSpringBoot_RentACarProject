@@ -13,22 +13,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 // Lombok, Java projelerinde tekrarlı (boilerplate) kodları ortadan kaldırmak için kullanılan bir Java kütüphanesidir.
-//@Entity anotasyonu sayesinde bu sınıf veritabanındaki brands tablosuna karşılık gelir.
 
-@Table(name = "brands")
 @Data
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Brand {	
+@Table(name = "brands")
+public class Brand {		// @Entity anotasyonu sayesinde bu sınıf veritabanındaki brands tablosuna karşılık gelir.
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)  // Otomatik artan primary key
 	@Column(name = "id")
 	private int id;
-	
+
 	@Column(name = "name")
 	private String name;
 
