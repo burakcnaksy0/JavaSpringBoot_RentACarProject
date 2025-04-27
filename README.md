@@ -59,6 +59,7 @@ Bu mimaride her katman **tek bir işten sorumludur**.
 - Web API Layer
 
 ---
+![Katmanlar Arasında İlişki](./image/layeredarc..png)
 ![Katmanlar Arasında İlişki](./image/layerRel.png)
 
 # 📦 Katmanlar ve Görevleri
