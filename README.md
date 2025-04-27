@@ -45,7 +45,7 @@ Burada proje yapılandırması için seçimler yapıyoruz:
 > **Not:** Bu bağımlılıklar `pom.xml` dosyası içinde bulunur.
 
 ---
-
+![Katmanlar Arasında İlişki](./image/layeredarc..png)
 ## 3. Katmanlı Mimari (Layered Architecture)
 
 Projeyi düzenli ve anlaşılır hale getirmek için katmanlı mimari kullanıyoruz.  
@@ -59,7 +59,7 @@ Bu mimaride her katman **tek bir işten sorumludur**.
 - Web API Layer
 
 ---
-![Katmanlar Arasında İlişki](./image/layeredarc..png)
+
 ![Katmanlar Arasında İlişki](./image/layerRel.png)
 
 # 📦 Katmanlar ve Görevleri
