@@ -237,6 +237,78 @@ public UserDTO convertToDto(UserEntity user) {
 > 🔁 Bu yapı sayesinde kod tekrarı azalır, temiz ve sürdürülebilir bir mimari elde edilir.
 
 
+Spring Boot projelerinde `business/requests` ve `business/responses` paketlerinin kullanılmasının temel amacı, **katmanlı mimaride veri akışını net bir şekilde ayırmak ve kontrol altına almaktır**. Bu yapı, özellikle kurumsal ve büyük projelerde kodun okunabilirliğini, sürdürülebilirliğini ve güvenliğini artırır.
 
+---
+
+## 📦 Neden `requests` ve `responses` paketleri var?
+
+### 1. **Veri Girişini ve Çıkışını Ayırmak (Separation of Concerns)**
+
+- `requests`: Dışarıdan (örneğin bir kullanıcıdan veya başka bir API'den) gelen **verileri temsil eder**. Örnek: `CreateBrandRequest`, `UpdateBrandRequest`
+- `responses`: Kullanıcıya ya da başka servislere **geri döndürülen verileri temsil eder**. Örnek: `GetAllBrandsResponse`, `GetByIdBrandResponse`
+
+Bu ayrım, hem frontend hem de backend için **veri kontrolünü kolaylaştırır**.
+
+---
+
+### 2. **Veri Gizliliği ve Güvenlik**
+
+Entity sınıflarınız (örneğin `Brand`) veritabanıyla birebir eşleşir. Ancak her alanı kullanıcıya göstermek ya da dışarıdan almak istemeyebilirsin.  
+Örneğin:
+
+```java
+// Entity'de olabilir:
+private Long id;
+private String name;
+private LocalDateTime createdAt;
+private String createdBy;
+```
+
+Ama bir `GetAllBrandsResponse`'da sadece şunu döndürmek isteyebilirsin:
+```java
+private Long id;
+private String name;
+```
+
+Bu sayede kullanıcıya gereksiz ya da hassas veri sunulmamış olur.
+
+---
+
+### 3. **API Dökümantasyonu ve Sözleşmesi Kolaylaşır**
+
+Swagger gibi araçlar sayesinde, `CreateBrandRequest` veya `GetAllBrandsResponse` gibi sınıflar otomatik dökümantasyon sağlar.  
+Ayrı sınıflar sayesinde **API daha anlaşılır olur.**
+
+---
+
+### 4. **Kodun Genişletilmesi ve Bakımı Kolaylaşır**
+
+Yeni alanlar eklendiğinde ya da farklı işlemler (create, update vs.) için özel alanlar gerektiğinde, entity'yi değiştirmek yerine sadece ilgili request/response sınıfını düzenlemen yeterlidir.
+
+---
+
+### 🔄 DTO - Entity Dönüşümü (ModelMapper ile)
+
+Bu yapının avantajı, az önce incelediğimiz `ModelMapperService` ile de ortaya çıkar:
+
+```java
+Brand brand = modelMapperService.forRequest().map(createBrandRequest, Brand.class);
+GetAllBrandsResponse dto = modelMapperService.forResponse().map(brand, GetAllBrandsResponse.class);
+```
+
+---
+
+### 🔍 Özetle
+
+| Amaç | Açıklama |
+|------|----------|
+| **Katman ayrımı** | Veri giriş (request) ve çıkışını (response) ayırmak |
+| **Güvenlik** | Gereksiz/hassas verileri gizlemek |
+| **Temizlik** | Kodun okunabilirliğini ve bakımını kolaylaştırmak |
+| **Dökümantasyon** | Swagger gibi araçlarla uyumlu, açık API tasarımı |
+| **Esneklik** | Farklı operasyonlar için özelleştirilmiş veri modelleri |
+
+---
 
 
