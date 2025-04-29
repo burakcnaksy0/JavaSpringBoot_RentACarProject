@@ -163,3 +163,55 @@ Her katmanda iki alt paket bulunur:
 - 🔗 **Bağımlılıklar azalır**, proje daha **esnek** hale gelir.
 - 📈 **Dependency Injection (Bağımlılık Enjeksiyonu)** prensibine uygun çalışır.
 
+## 🔧 ModelMapper Nedir?
+
+ModelMapper, Java Spring Boot projelerinde kullanılan bir **nesne dönüştürme (object mapping)** kütüphanesidir. Temel amacı, bir nesnedeki verileri başka bir nesneye otomatik ve kolay şekilde kopyalamaktır. Özellikle DTO (Data Transfer Object) ile Entity sınıfları arasında dönüşüm yaparken oldukça kullanışlıdır.
+
+### 📌 Ne İşe Yarar?
+
+- 🔄 Entity – DTO dönüşümünü kolaylaştırır.  
+- ✂️ Gereksiz getter-setter, manuel kopyalama kodlarını azaltır.  
+- 📦 Kodun daha temiz, okunabilir ve sürdürülebilir olmasını sağlar.  
+- 🔍 Alan isimleri aynıysa otomatik eşleştirme yapar.  
+- 🧩 Gerekirse özel eşleştirme (custom mapping) yapılabilir.
+
+### 💡 Kullanım Senaryoları
+
+- `UserEntity` sınıfından `UserDTO` sınıfına veri aktarımı
+- Formdan gelen `CreateUserRequest` nesnesini `UserEntity`'ye dönüştürme işlemi
+
+---
+
+## ⚙️ Kurulum
+
+### 1. Maven Bağımlılığı
+
+```xml
+<dependency>
+    <groupId>org.modelmapper</groupId>
+    <artifactId>modelmapper</artifactId>
+    <version>3.1.1</version>
+</dependency>
+
+🧩 Bean Tanımı (Spring Boot)
+Spring'de ModelMapper'ı kullanmadan önce bir bean olarak tanımlanması gerekir.
+
+✅ Neden Bean Olarak Tanımlarız?
+Spring'de bir sınıfı @Bean ile tanımlamak, bu nesnenin Spring tarafından yönetilmesini sağlar. Böylece her yerde otomatik olarak (@Autowired ile) kullanılabilir hale gelir.
+
+📦 Avantajları:
+Tek bir ModelMapper nesnesi kullanılır (singleton)
+
+Her yerde yeniden oluşturmak gerekmez
+
+Özelleştirmeler merkezi olarak yapılabilir
+🛠️ Bean Tanımı:
+Application.java veya bir @Configuration sınıfı içerisine aşağıdaki kod eklenir:
+  @Bean
+  public ModelMapper getModelMapper() {
+      return new ModelMapper();
+  }
+
+
+
+
