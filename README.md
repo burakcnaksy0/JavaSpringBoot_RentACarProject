@@ -192,25 +192,50 @@ ModelMapper, Java Spring Boot projelerinde kullanılan bir **nesne dönüştürm
     <artifactId>modelmapper</artifactId>
     <version>3.1.1</version>
 </dependency>
+```
 
-🧩 Bean Tanımı (Spring Boot)
-Spring'de ModelMapper'ı kullanmadan önce bir bean olarak tanımlanması gerekir.
+---
 
-✅ Neden Bean Olarak Tanımlarız?
-Spring'de bir sınıfı @Bean ile tanımlamak, bu nesnenin Spring tarafından yönetilmesini sağlar. Böylece her yerde otomatik olarak (@Autowired ile) kullanılabilir hale gelir.
+## 🧩 Bean Tanımı (Spring Boot)
 
-📦 Avantajları:
-Tek bir ModelMapper nesnesi kullanılır (singleton)
+Spring'de `ModelMapper`'ı kullanmadan önce bir **bean** olarak tanımlanması gerekir.
 
-Her yerde yeniden oluşturmak gerekmez
+### ✅ Neden Bean Olarak Tanımlarız?
 
-Özelleştirmeler merkezi olarak yapılabilir
-🛠️ Bean Tanımı:
-Application.java veya bir @Configuration sınıfı içerisine aşağıdaki kod eklenir:
-  @Bean
-  public ModelMapper getModelMapper() {
-      return new ModelMapper();
-  }
+Spring'de bir sınıfı `@Bean` ile tanımlamak, bu nesnenin Spring tarafından yönetilmesini sağlar. Böylece her yerde otomatik olarak (`@Autowired` ile) kullanılabilir hale gelir.
+
+### 📦 Avantajları:
+
+- Tek bir `ModelMapper` nesnesi kullanılır (singleton)
+- Her yerde yeniden oluşturmak gerekmez
+- Özelleştirmeler merkezi olarak yapılabilir
+
+### 🛠️ Bean Tanımı:
+
+`Application.java` ya da bir `@Configuration` sınıfı içerisine aşağıdaki kod eklenir:
+
+```java
+@Bean
+public ModelMapper getModelMapper() {
+    return new ModelMapper();
+}
+```
+
+---
+
+Artık `ModelMapper` sınıfını aşağıdaki gibi projede kullanabilirsin:
+
+```java
+@Autowired
+private ModelMapper modelMapper;
+
+public UserDTO convertToDto(UserEntity user) {
+    return modelMapper.map(user, UserDTO.class);
+}
+```
+
+> 🔁 Bu yapı sayesinde kod tekrarı azalır, temiz ve sürdürülebilir bir mimari elde edilir.
+
 
 
 
