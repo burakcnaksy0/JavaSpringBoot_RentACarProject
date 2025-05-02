@@ -9,10 +9,10 @@ import kodlama.io.rentACar.entities.concretes.Brand;
 
 /*
 JpaRepository<T, ID> → Spring Data JPA tarafından sağlanan bir interface'tir.
-Senin durumunda:
+Bu durumda:
 	T = Brand → Yani bu repository Brand entity’si için çalışacak.
 	ID = Integer → Yani Brand tablosunun id alanı Integer türünde primary key
  */
 public interface BrandRepository extends JpaRepository<Brand, Integer> {
-
+	boolean existsByName(String name);   // spring jpa keywords
 }
