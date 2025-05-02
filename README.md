@@ -311,4 +311,112 @@ GetAllBrandsResponse dto = modelMapperService.forResponse().map(brand, GetAllBra
 
 ---
 
+## Neden `Model` kullanılır, `Brand` değil?
+
+Gerçek hayattaki ilişkiyi düşün:
+
+* Arabanın modeli: *Toyota Corolla*
+* Markası: *Toyota*
+
+Ancak:
+
+* Bir arabanın markası tek başına **yetersiz** bir bilgidir. "Toyota" marka diyerek arabayı tarif edemezsin.
+* Ama "Corolla" modeli (ve bu modelin zaten bir markası var) arabayı tanımlamak için yeterlidir.
+
+### Bu yüzden:
+
+```java
+@ManyToOne
+@JoinColumn(name = "model_id")
+private Model model;
+```
+
+Model zaten içinde şu şekilde Brand bilgisi barındırır:
+
+```java
+@ManyToOne
+@JoinColumn(name = "brand_id")
+private Brand brand;
+```
+
+Yani dolaylı olarak:
+
+**Car → Model → Brand**
+
+Şeklinde bir zincir olur. Böylece her `Car` nesnesi hem model hem de marka bilgisine sahiptir ama **veritabanında fazladan foreign key tutmadan** bu ilişki kurulmuş olur. Bu da doğru veri modelleme açısından en iyi yaklaşımdır.
+
+### Özetle:
+
+* `Car` doğrudan bir `Model`’e bağlıdır.
+* `Model` ise bir `Brand`’e bağlıdır.
+* Bu yapı hem sade hem de gerçek dünyayı en doğru şekilde yansıtır.
+
+## ❌ Hata: Brand Silinemiyor (Foreign Key Constraint)
+
+### 🧾 Hata Mesajı:
+
+```txt
+ERROR: update or delete on table "brands" violates foreign key constraint "fk..." on table "models"
+Detail: Key (id)=(1) is still referenced from table "models".
+```
+
+### 📌 Sebep:
+
+`brands` tablosundaki bir kaydı silmeye çalışıyorsun. Ancak bu kaydı `models` tablosundaki kayıtlar hâlâ kullanıyor. Veritabanı, referanslı veri kaybolmasın diye silme işlemine izin vermiyor.
+
+---
+
+## ✅ Çözüm Yolları:
+
+### 1. Önce Bağlı Modelleri Sil
+
+```java
+modelRepository.deleteAllByBrandId(1);
+brandRepository.deleteById(1);
+```
+
+> `deleteAllByBrandId(int id)` metodunu `ModelRepository` içerisine yazmalısın.
+
+---
+
+### 2. Cascade Delete Kullan
+
+Marka silinince, bağlı modellerin de otomatik silinmesini istiyorsan:
+
+```java
+@OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<Model> models;
+```
+
+> Bu ilişkiyi `Brand` entity’sinde tanımla.
+
+---
+
+### 3. Kullanıcıyı Uyar ve Silme
+
+Silme işleminden önce marka ile ilişkili model var mı diye kontrol et:
+
+```java
+if (modelRepository.existsByBrandId(brandId)) {
+    throw new BusinessException("Bu markaya bağlı modeller olduğu için silinemez.");
+}
+```
+
+> `existsByBrandId(int id)` methodunu `ModelRepository` içinde tanımla.
+
+---
+
+## 📌 Hangi Yöntemi Seçmeliyim?
+
+| İhtiyacın                                  | Kullanman Gereken                      |
+| ------------------------------------------ | -------------------------------------- |
+| Modeller de silinsin                       | CascadeType.ALL ve orphanRemoval       |
+| Önce modeller silinip sonra marka silinsin | Servis katmanında önce modelleri sil   |
+| Silmeye izin verilmesin                    | Kullanıcıya uyarı ver, silmeyi engelle |
+
+---
+
+İsteğine göre yukarıdaki üç yöntemden birini uygulayabilirsin.
+
+
 
