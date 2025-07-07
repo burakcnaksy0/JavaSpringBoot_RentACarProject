@@ -56,7 +56,7 @@ Bu mimaride her katman **tek bir işten sorumludur**.
 - Entities Layer
 - Data Access Layer
 - Business Layer
-- Web API Layer
+- Controller(Web API) Layer
 
 ---
 
